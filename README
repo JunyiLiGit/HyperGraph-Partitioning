@@ -1,0 +1,5 @@
+Author: Junyi LI
+Email: junyil@g.clemson.edu
+
+How to compile: type "make clean" , "make"
+How to run: type "./run.py numberOfRandomVector numberOfIteration numberOfCLuster"
