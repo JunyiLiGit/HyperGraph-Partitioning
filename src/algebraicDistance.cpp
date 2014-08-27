@@ -2,7 +2,6 @@
 #include <iostream>
 #include <cmath>
 #include <random>
-//#include <chrono>
 #include <time.h>
 #include <vector>
 
@@ -10,7 +9,6 @@ Eigen::SparseMatrix<double,Eigen::RowMajor> randomVector(int row, int col)
 {
   Eigen::SparseMatrix<double,Eigen::RowMajor> p(row,col);
   p.reserve(col);
-//  unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
  unsigned int seed = static_cast<unsigned int>( time(NULL) ); 
  std::default_random_engine generator(seed);
   std::uniform_real_distribution<double> distribution(-0.5,0.5);
