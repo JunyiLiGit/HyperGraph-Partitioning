@@ -18,51 +18,32 @@ int main(int argc, char *argv[]){
 
 
   Eigen::MatrixXd parserOutput=parser(fileName);
-  //std::cout<<parserOutput<<std::endl;
-
-
 
   int numberOfVertice = parserOutput(1,0);
 
 
   Eigen::SparseMatrix<int,Eigen::RowMajor> inc = incindenceMatrix(parserOutput);
-//  Eigen::SparseMatrix<int,Eigen::RowMajor> inc = checkIncindenceMatrix(incBefore);
-  //std::cout<<"inc matrix is "<<inc<<std::endl;
 
   std::vector<int> v = getVerticeDegree(inc);
 
 
   Eigen::SparseMatrix<int> diagonal = getDiagonalMatrix(v);
-  //std::cout<<"diagonal matrix is "<<diagonal<<std::endl;
-
-
 
   Eigen::SparseMatrix<int,Eigen::RowMajor> adjMatrix = adjancentMatrix(inc,inc.transpose(),diagonal);
 
-  //std::cout<<"adjancy matrix is "<<adjMatrix<<std::endl;
-
   Eigen::SparseMatrix<double,Eigen::RowMajor> randomMatrix = randomVector(numberOfRandomVector,numberOfVertice);
 
-//  std::cout<<"random matrix is "<<randomMatrix<<std::endl;
-
-
   updateMatrix(randomMatrix, adjMatrix, numberOfRandomVector);
-// std::cout<<"random matrix is "<<randomMatrix<<std::endl;
 
   Eigen::MatrixXd algebraicDistance = caculateAlgebraicDistance(inc,randomMatrix);
 
- // std::cout<<algebraicDistance<<std::endl;
 
   std::map<int,double> newWeight = getNewWeight(algebraicDistance);
 
   std::map<int,double> oldWeight = getOldWeight(inc);
 
-
-//  printMap(newWeight);
-
   std::string strBefore = formatFile(inc,parserOutput,oldWeight,"before");
   std::string strAfter = formatFile(inc,parserOutput,newWeight,"after");
-
 
   std::stringstream stream;
   std::stringstream ss;
