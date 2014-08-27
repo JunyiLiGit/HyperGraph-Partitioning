@@ -17,10 +17,9 @@ std::string formatFile(Eigen::MatrixXd inc,Eigen::MatrixXd parser,std::map<int, 
    const char *middle = "_";
    const char *last;
    char result[100];
-   //please change this path to be your own path
-   const char *path = "/home/junyil/hypergraph/newVersion/data/";
+   const char *path = "./data/";
    strcpy(result,path);
-   strcat(result,pchar1); // copy string one into the result.
+   strcat(result,pchar1);
    strcat(result,middle);
    strcat(result,pchar2);
    strcat(result,c);
@@ -39,6 +38,5 @@ std::string formatFile(Eigen::MatrixXd inc,Eigen::MatrixXd parser,std::map<int, 
      outfile<<std::endl;
   }
   std::string str(result);
-  //std::cout<<str<<std::endl;
   return str;
 }

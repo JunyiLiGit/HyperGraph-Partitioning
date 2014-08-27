@@ -1,5 +1,31 @@
 Author: Junyi LI
 Email: junyil@g.clemson.edu
 
-How to compile: type "make clean" , "make"
-How to run: type "./run.py numberOfRandomVector numberOfIteration numberOfCLuster"
+Input and output file :
+
+Input: 
+http://yifanhu.net/GALLERY/GRAPHS/search.html
+
+Output:
+test folder: The input files
+data folder: The output files(not the final results)
+*before and *after: Input file for Hmetis 
+*beforehmetis, *afterhmetis, *before.part.*, *after.part.*: hmetis output file
+
+
+
+Compile: type "make clean" , "make"
+
+Run one sample: type "./run numberOfRandomVector numberOfIteration numberOfCLuster"
+
+Run multiple samples: type "./run.py numberOfRandomVector numberOfIteration numberOfCLuster"
+
+
+
+Note: Some clang version(maybe lower, like McAdams lab machine ) does not support "chrono", it will give you error when you include chrono from c++11.
+If you can not fix it, just modify the code in /src/algebraicDistance.cpp
+comment "#include <chrono>"
+comment "unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();"
+change "std::default_random_engine generator (seed);" to be "std::default_random_engine generator;"
+
+This way, you will always get the same random vector if the generator doesn't have a seed.

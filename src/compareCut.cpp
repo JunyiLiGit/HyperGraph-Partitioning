@@ -38,45 +38,11 @@ int caculateCut(std::map<int,int> myMap, Eigen::SparseMatrix<int,Eigen::RowMajor
         {
           int key = myMap[it.row()];
           edgeClusterMap[key] = k;
-          //std::cout<<it.row()<<std::endl;
         }
-/*
-        for (std::map<int,int>::iterator it=edgeClusterMap.begin(); it!=edgeClusterMap.end(); ++it){
-          std::cout << it->first << " => " << it->second << '\n';
+        if(edgeClusterMap.size()>1){
+          ++ cutSum;
         }
-*/
-//        std::cout<<"size is: "<<edgeClusterMap.size()-1<<std::endl;
-        cutSum += edgeClusterMap.size()-1;
-
-
     }
-
-    //std::cout<<cutSum<<std::endl;
-
  return cutSum;
 
 }
-
-/*
-
-int main()
-{
-  std::map<int,int> myMap = createVerticeClusterMap("782After.part.8");
-  printMap(myMap);
-  Eigen::SparseMatrix<int, Eigen::ColMajor> A(7,5);
-  A.insert(0,0)=1;
-  A.insert(0,1)=1;
-  A.insert(1,0)=1;
-  A.insert(1,3)=1;
-  A.insert(2,3)=1;
-  A.insert(3,2)=1;
-  A.insert(3,3)=1;
-  A.insert(4,1)=1;
-  A.insert(4,2)=1;
-  A.insert(5,1)=1;
-  A.insert(5,2)=1;
-  A.insert(6,1)=1;
-  caculateCut(myMap, A);
-
-}
-*/

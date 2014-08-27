@@ -8,7 +8,7 @@ std::map <int, double> getNewWeight(Eigen::MatrixXd m)
   std::map<int, double> myMap;
   for(int i=0; i<m.rows();++i){
     int key = i;
-    double value = 1/m(i,0);
+    double value = round(1/m(i,0)*1000);
     myMap[key] = value;
   }
 

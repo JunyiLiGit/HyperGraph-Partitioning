@@ -22,7 +22,6 @@ int value=0;
           if(field[1]=="Hyperedge" && field[2]=="Cut:" ){
              int newValue = atoi(field[3].c_str());
              value = newValue;
-             //std::cout<<value<<std::endl;
           }
 
   }
