@@ -3,13 +3,12 @@ Email: junyil@g.clemson.edu
 
 Input and output file :
 
-Input: 
+Input: test folder
 http://yifanhu.net/GALLERY/GRAPHS/search.html
-test folder: The input files
 
-Output:
 
-data folder: The output files(not the final results)
+Output:data folder(not the final results)
+
 *before and *after: Input file for Hmetis 
 *beforehmetis, *afterhmetis, *before.part.*, *after.part.*: hmetis output file
 
