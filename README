@@ -5,9 +5,10 @@ Input and output file :
 
 Input: 
 http://yifanhu.net/GALLERY/GRAPHS/search.html
+test folder: The input files
 
 Output:
-test folder: The input files
+
 data folder: The output files(not the final results)
 *before and *after: Input file for Hmetis 
 *beforehmetis, *afterhmetis, *before.part.*, *after.part.*: hmetis output file
