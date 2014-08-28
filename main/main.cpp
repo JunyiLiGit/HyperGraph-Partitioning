@@ -4,7 +4,6 @@
 #include "Hyper/weight.h"
 #include "Hyper/compareCut.h"
 #include "Hyper/oldCut.h"
-#include <iostream>
 #include <cstdlib>
 #include <time.h>
 
